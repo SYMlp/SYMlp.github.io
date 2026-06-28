@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>石宜萌 · AI 系统设计与落地 / Shi Yimeng · AI Systems</title>
+<style>
+  :root{
+    --bg:#FAF7F2; --card:#FFFFFF; --ink:#211C16; --muted:#6B6258;
+    --line:#E7E0D6; --accent:#2553B0; --warm:#B4541F;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  body.lang-en .zh{display:none}
+  body:not(.lang-en) .en{display:none}
+  .wrap{max-width:760px; margin:0 auto; padding:24px 22px 80px}
+  .langbar{display:flex; justify-content:flex-end; margin-bottom:18px}
+  .langbtn{
+    font:inherit; font-size:13px; font-weight:600; cursor:pointer;
+    background:#fff; border:1px solid var(--line); color:var(--muted);
+    border-radius:999px; padding:5px 14px;
+  }
+  .langbtn:hover{color:var(--ink)}
+  header{margin-bottom:36px}
+  .name{font-size:30px; font-weight:700; letter-spacing:.5px; margin:0 0 6px}
+  .tag{font-size:18px; color:var(--accent); font-weight:600; margin:0 0 14px}
+  .lede{font-size:16px; color:var(--muted); margin:0; max-width:62ch}
+  h2{font-size:14px; letter-spacing:2px; color:var(--muted); font-weight:700;
+     margin:48px 0 18px; padding-bottom:8px; border-bottom:1px solid var(--line)}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:22px 22px 20px; margin-bottom:16px;
+  }
+  .card.hero{border-color:#D8C4A8; box-shadow:0 2px 18px rgba(180,84,31,.07)}
+  .card h3{font-size:18px; margin:0 0 4px}
+  .card .sub{font-size:13px; color:var(--warm); font-weight:600; margin:0 0 12px}
+  .card p.body{margin:0 0 16px; font-size:15px; color:#3a342c}
+  .btns{display:flex; flex-wrap:wrap; gap:9px}
+  a.btn{
+    display:inline-block; text-decoration:none; font-size:14px; font-weight:600;
+    padding:8px 15px; border-radius:9px; border:1px solid var(--line); color:var(--ink); background:#fff;
+  }
+  a.btn.primary{background:var(--accent); border-color:var(--accent); color:#fff}
+  a.btn:hover{filter:brightness(.96)}
+  .want{padding-left:20px; margin:0}
+  .want li{margin-bottom:8px; font-size:15px; color:#3a342c}
+  .bg{font-size:15px; color:#3a342c; margin:0}
+  .contact{margin-top:14px; font-size:15px}
+  .contact a{color:var(--accent); font-weight:600; text-decoration:none}
+  footer{margin-top:54px; font-size:13px; color:var(--muted); border-top:1px solid var(--line); padding-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="langbar">
+    <button class="langbtn" id="lang" type="button" onclick="document.body.classList.toggle('lang-en')">
+      <span class="zh">EN</span><span class="en">中文</span>
+    </button>
+  </div>
+
+  <header>
+    <p class="name"><span class="zh">石宜萌</span><span class="en">Shi Yimeng (Tim)</span></p>
+    <p class="tag"><span class="zh">做 AI 系统设计与落地</span><span class="en">AI Systems — Design &amp; Delivery</span></p>
+    <p class="lede zh">我设计"让 AI 可靠地替人干活"的整套方法——一句人话的需求怎么变成机器能验收的目标、AI 接进真实系统时权限怎么被关住、效果怎么被量出来。下面三个，是我自己造、真在跑的。</p>
+    <p class="lede en">I design the methods that let AI reliably do real work for people — how a plain-language request becomes a machine-checkable target, how an AI's permissions get fenced in when it touches a production system, how the results get measured. The three things below I built myself, and they actually run.</p>
+  </header>
+
+  <h2><span class="zh">我自己做的东西（都能看、能上手）</span><span class="en">What I've built (all open, all hands-on)</span></h2>
+
+  <div class="card hero">
+    <h3><span class="zh">一条"人提需求 → AI 批量造 → 机器自动验收"的流水线</span><span class="en">A pipeline: plain request → AI mass-generates → machine auto-verifies</span></h3>
+    <p class="sub"><span class="zh">已公开 · 逻辑全透明</span><span class="en">Public · logic fully transparent</span></p>
+    <p class="body zh">我想解决的是这个问题：一句人话（"做个更紧张刺激的版本"）到底怎么变成机器能验收的东西。我的流水线把它拆成三层——人写假设、AI 翻成参数和可测目标、机器跑 200 局自动验收；达标放行，不达标自动打回重做甚至直接淘汰。有个偷懒的"轻松版"就是这么被门禁判为太闷又太拖、当场淘汰的，不靠人肉试玩。它能批量生成、批量验收 A/B 变体。我拿一个方块消除游戏当试验载体，所以成品顺带能玩——但值钱的是那条闭环，不是游戏。</p>
+    <p class="body en">The problem I wanted to crack: how does a plain-English wish ("make it feel more tense") actually become something a machine can check? My pipeline splits it into three layers — a human writes the hypothesis, an AI turns it into parameters and measurable targets, and a harness plays 200 rounds to verify. Pass and it ships; fail and it's auto-sent back or dropped. One lazy "relaxed" variant got auto-killed this way — the gate judged it too dull and too slow, no human playtesting needed. It generates and verifies A/B variants in batch. I used a block-puzzle game as the test payload, so the output happens to be playable — but the value is the loop, not the game.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://symlp.github.io/block-blast-pipeline/process.html" target="_blank" rel="noopener"><span class="zh">看这套逻辑怎么一步步长出来的</span><span class="en">How this logic was built, step by step</span></a>
+      <a class="btn" href="https://symlp.github.io/block-blast-pipeline/?variant=ai-brisk" target="_blank" rel="noopener"><span class="zh">看同一引擎跑出的五种行为（可上手）</span><span class="en">Five behaviors from one engine (hands-on)</span></a>
+      <a class="btn" href="https://github.com/SYMlp/block-blast-pipeline" target="_blank" rel="noopener"><span class="zh">看代码</span><span class="en">Code</span></a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="zh">企业级"自动派单"智能体</span><span class="en">An enterprise "auto-dispatch" agent</span></h3>
+    <p class="sub"><span class="zh">代码公开 · 可现场演示 / 录屏</span><span class="en">Code public · live demo / screencast on request</span></p>
+    <p class="body zh">故障告警进来，这个 AI 自动判断是什么问题、该派给谁；遇到高风险的事强制转人工审批，不让它擅自动手。我真正下功夫的不是功能多，而是一个 AI 接进真实系统时该有的"笼子"：动作白名单、核心目标强制人工、效果用 eval 卡线（路由准确率低于 0.95 直接红灯）、每一步都能追溯。这条思路是从我做企业安全运营（SOC）的经验里长出来的。</p>
+    <p class="body en">An alert comes in; the agent works out what it is and who to route it to — and anything high-risk is forced through human approval, never auto-executed. What I actually invested in isn't feature count, it's the cage an AI needs when it touches a real system: an action allow-list, mandatory human sign-off on core targets, results held to an eval gate (routing accuracy below 0.95 fails the build), every step traceable. The approach grew out of my work building a security operations (SOC) system.</p>
+    <div class="btns">
+      <a class="btn" href="https://github.com/LSRabbit6/incident-dispatch-agent" target="_blank" rel="noopener"><span class="zh">看代码</span><span class="en">Code</span></a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="zh">我自己用的一套 AI 工作系统</span><span class="en">An AI working system I built for myself</span></h3>
+    <p class="sub"><span class="zh">代码公开 · 长期自用</span><span class="en">Code public · in daily use</span></p>
+    <p class="body zh">我给自己造了一套 AI 操作系统：把跨项目的经验、方法、决策结构化存起来，人和 AI 都能调用，还能在已有知识上推导出新结论。它每天在帮我自己干活——不是个摆设，这页背后的判断也有它的份。</p>
+    <p class="body en">I built myself an "OS" for working with AI: it stores experience, methods and decisions from across my projects in a structured way that both I and an AI can draw on, and it can derive new conclusions from what's already there. It runs my own days — not a showpiece.</p>
+    <div class="btns">
+      <a class="btn" href="https://github.com/LSRabbit6/cursor-genesis" target="_blank" rel="noopener"><span class="zh">看代码</span><span class="en">Code</span></a>
+    </div>
+  </div>
+
+  <h2><span class="zh">背景</span><span class="en">Background</span></h2>
+  <p class="bg zh">几年软件工程经验，做过企业数据安全平台、大数据底座、安全运营（SOC）系统；目前在做企业指标平台（把业务口径变成能直接跑的查询）。业余时间专注做能真正落地的 AI 系统。</p>
+  <p class="bg en">Several years in software engineering — enterprise data-security platforms, big-data infrastructure, a security operations (SOC) system; currently building an enterprise metrics platform (turning business definitions into queries that run). In my own time I focus on AI systems that actually ship.</p>
+
+  <h2><span class="zh">我想找什么</span><span class="en">What I'm looking for</span></h2>
+  <ul class="want zh">
+    <li>请懂行的人看看我这些东西，给点实在建议——它们现在落在什么位置、还缺什么。</li>
+    <li>有合适的 AI 系统设计 / 智能体开发的机会，希望能认识、聊一聊。</li>
+  </ul>
+  <ul class="want en">
+    <li>A knowledgeable eye on these — where they stand, what's missing.</li>
+    <li>The right opportunity in AI systems design / agent development — I'd like to connect.</li>
+  </ul>
+
+  <p class="contact"><span class="zh">联系：</span><span class="en">Contact: </span><a href="mailto:shiyimeng.cs@hotmail.com">shiyimeng.cs@hotmail.com</a></p>
+
+  <footer>
+    <span class="zh">所有项目均为个人业余作品，不含任何任职公司的代码或客户信息。</span>
+    <span class="en">All projects are personal side work — no employer code or client information.</span>
+  </footer>
+
+</div>
+</body>
+</html>
