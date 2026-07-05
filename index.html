@@ -67,39 +67,39 @@
   <header>
     <p class="name"><span class="zh">石宜萌</span><span class="en">Shi Yimeng (Tim)</span></p>
     <p class="tag"><span class="zh">做 AI 系统设计与落地</span><span class="en">AI Systems — Design &amp; Delivery</span></p>
-    <p class="lede zh">现在人人都想让 AI 真正接手干活，但没人敢把真实系统直接交给它。我做的就是中间缺的那一环：让 AI 干得了活、闯不了祸、效果算得清。下面三个东西都公开、能上手、真在跑。</p>
-    <p class="lede en">Everyone wants AI to actually take on real work; nobody dares hand it a real system. I build the missing piece in between: AI that gets the work done, can't cause damage, and delivers results you can measure. The three things below are public, hands-on, and running.</p>
+    <p class="lede zh">我是一名软件工程师，业余时间一直在研究一个问题：怎么让 AI 稳定地替人完成真实的工作。下面是我做的三个东西。</p>
+    <p class="lede en">I'm a software engineer. In my own time I've been working on one question: how to get AI to do real work for people, reliably. Below are three things I've built.</p>
   </header>
 
-  <h2><span class="zh">我自己做的东西（都能看、能上手）</span><span class="en">What I've built (all open, all hands-on)</span></h2>
+  <h2><span class="zh">我做的东西</span><span class="en">What I've built</span></h2>
 
   <div class="card hero">
-    <h3><span class="zh">说一句话，得到一个机器验收过的软件版本</span><span class="en">Say one sentence, get a machine-verified build back</span></h3>
-    <p class="sub"><span class="zh">全流程公开 · 成品在线可试</span><span class="en">Fully public · results playable online</span></p>
-    <p class="body zh">想试一个产品新点子，通常得工程师改代码、反复调、再看效果，每试一次都又慢又贵。这条流水线把它压成一句话的事：人用一句话说想要什么，AI 生成完整的新版本，机器自动试跑 200 局做验收——合格的放行，不合格的自动打回重做，还不行就淘汰，全程不用人盯。有一个做砸了的版本就是这么被自动拦下的，没混进成品。我用一个小游戏当试验对象，所以每个验收合格的版本，在网页上就能亲手试到。</p>
-    <p class="body en">Trying a new product idea normally means an engineer coding it, tuning it, checking the result — slow and expensive per attempt. This pipeline compresses that into one sentence: you say what you want in plain words, an AI builds a complete new version, and a machine test-runs it 200 rounds to accept or reject — passes ship, failures get reworked or dropped, no human supervision. One botched version was caught and discarded exactly this way. I used a small game as the test subject, so every version that passed is playable in your browser.</p>
+    <h3><span class="zh">一条自动生成、自动验收软件的流水线</span><span class="en">A pipeline that generates and verifies software automatically</span></h3>
+    <p class="sub"><span class="zh">已公开 · 成品在线可玩</span><span class="en">Public · results playable online</span></p>
+    <p class="body zh">输入一句需求描述，AI 会生成一个完整的软件新版本，再由程序自动验收：跑 200 局模拟测试，达标的放行，不达标的打回重做，还不行就丢弃，中间不需要人参与。我用一个方块小游戏做试验对象，验收合格的版本挂在网页上，可以直接玩到。做这个是想验证一件事：AI 产出的质量，可以不靠人盯，靠机器把关。</p>
+    <p class="body en">You type one sentence describing what you want. The AI generates a complete new version of the software, and a program then checks it: 200 simulated rounds, passing versions go through, failing ones get sent back for rework or discarded, with no human in between. I used a small block puzzle game as the test subject; the versions that passed are on the web and playable. I built this to test one idea: the quality of AI output can be guarded by machines rather than by people watching over it.</p>
     <div class="btns">
       <a class="btn primary" href="https://symlp.github.io/block-blast-pipeline/process.html" target="_blank" rel="noopener"><span class="zh">看这条流水线怎么运转（图文）</span><span class="en">See how the pipeline works (illustrated)</span></a>
-      <a class="btn" href="https://symlp.github.io/block-blast-pipeline/?variant=ai-brisk" target="_blank" rel="noopener"><span class="zh">亲手试一个 AI 做出的版本</span><span class="en">Try a version the AI built</span></a>
+      <a class="btn" href="https://symlp.github.io/block-blast-pipeline/?variant=ai-brisk" target="_blank" rel="noopener"><span class="zh">试玩一个 AI 做出的版本</span><span class="en">Try a version the AI built</span></a>
       <a class="btn" href="https://github.com/SYMlp/block-blast-pipeline" target="_blank" rel="noopener"><span class="zh">看代码</span><span class="en">Code</span></a>
     </div>
   </div>
 
   <div class="card">
-    <h3><span class="zh">让 AI 进真实系统干活，又闯不了祸</span><span class="en">AI working inside a real system — without the risk</span></h3>
-    <p class="sub"><span class="zh">代码公开 · 可现场演示 / 录屏</span><span class="en">Code public · live demo / screencast on request</span></p>
-    <p class="body zh">企业最想让 AI 接手的是值班、故障处理这类活，也最怕它乱来。这个智能体接到故障告警后，自动判断是什么问题、该派给谁；高风险的操作会强制停下来等人签字，每一步都留记录，判断准确率有自动化测试卡着——低于 95% 系统直接亮红灯、不许上线。这套"放 AI 干活、但关得住它"的做法，来自我此前给企业建安全运营中心（SOC）的经验。</p>
-    <p class="body en">Duty rotations and incident handling are the jobs companies most want AI to take — and where they most fear it going rogue. This agent takes a fault alert, works out what it is and who should handle it; anything high-risk is stopped for a human signature, every step is logged, and its judgment is held to an automated test — below 95% accuracy, it's blocked from shipping. This "let AI work, but keep it contained" approach comes from my experience building an enterprise security operations center (SOC).</p>
+    <h3><span class="zh">一个智能体接入企业系统的完整样板</span><span class="en">A working model of an AI agent wired into enterprise systems</span></h3>
+    <p class="sub"><span class="zh">研究项目 · 代码公开</span><span class="en">Research project · code public</span></p>
+    <p class="body zh">这个项目没有实际上线。我做它是为了把一个问题彻底搞清楚：让 AI 接进企业系统干活，要配齐哪些东西才算稳妥。样板里这些都是真实做出来的：告警进来，它自动判断是什么问题、该派给谁；高风险操作强制停下来等人批准；每一步留有记录；判断准确率有自动化测试把关，低于 95% 不允许更新。这些标准不是凭空定的，来自我之前给企业建安全运营系统（SOC）的经验。</p>
+    <p class="body en">This one is not deployed in production. I built it to settle one question thoroughly: what does an AI agent need around it before it can safely work inside an enterprise system? Everything in the model is actually implemented: an alert comes in, it works out what the problem is and who should handle it; high-risk actions stop and wait for human approval; every step is logged; its accuracy is held by automated tests, and below 95% no update is allowed through. The standards aren't invented — they come from my earlier work building an enterprise security operations (SOC) system.</p>
     <div class="btns">
       <a class="btn" href="https://github.com/LSRabbit6/incident-dispatch-agent" target="_blank" rel="noopener"><span class="zh">看代码</span><span class="en">Code</span></a>
     </div>
   </div>
 
   <div class="card">
-    <h3><span class="zh">让 AI 长记性：越用越懂你的工作系统</span><span class="en">AI with a memory: a working system that learns you</span></h3>
-    <p class="sub"><span class="zh">代码公开 · 每天自用</span><span class="en">Code public · in daily use</span></p>
-    <p class="body zh">大多数人用 AI，每次打开都像跟一个失忆的新人重新磨合。我给自己建了一套解决这个问题的系统：把跨项目的经验、方法、做过的决策，存成 AI 能直接调用的结构——它越用越懂我，还能从已有的知识里推出新结论。我每天靠它干活，不是概念稿。里面通用的零件已经拆成四个开源工具发布，别人拿去就能用。</p>
-    <p class="body en">For most people, every AI session means onboarding an amnesiac new hire all over again. I built a system that fixes this for myself: experience, methods and past decisions from all my projects, stored in a structure the AI can draw on directly — it understands me better the longer we work, and derives new conclusions from what it already knows. I run on it daily; it's not a concept deck. Its generic parts are published as four open-source tools anyone can use.</p>
+    <h3><span class="zh">一套给 AI 用的长期记忆系统</span><span class="en">A long-term memory system for AI</span></h3>
+    <p class="sub"><span class="zh">每天自用 · 代码公开</span><span class="en">In daily use · code public</span></p>
+    <p class="body zh">我把各个项目里的经验、方法和做过的决策，整理成 AI 能直接读取的结构，让它跨项目、跨会话地记住这些，用得越久越顺手。这套系统我每天在用。其中通用的部分，拆成了四个开源工具发布。</p>
+    <p class="body en">I organize the experience, methods and decisions from my projects into a structure an AI can read directly, so it remembers them across projects and sessions, and gets more useful the longer it's used. I use this system every day. Its generic parts are published as four open-source tools.</p>
     <div class="btns">
       <a class="btn" href="https://github.com/LSRabbit6/cursor-genesis" target="_blank" rel="noopener"><span class="zh">看代码</span><span class="en">Code</span></a>
       <a class="btn" href="https://github.com/SYMlp/claude-hooks-kit" target="_blank" rel="noopener"><span class="zh">开源件：claude-hooks-kit</span><span class="en">Open-sourced: claude-hooks-kit</span></a>
@@ -110,17 +110,17 @@
   </div>
 
   <h2><span class="zh">背景</span><span class="en">Background</span></h2>
-  <p class="bg zh">几年软件工程经验，做过企业数据安全平台、大数据底座、安全运营（SOC）系统；目前在做企业指标平台（把业务口径变成能直接跑的查询）。业余时间专注做能真正落地的 AI 系统。</p>
-  <p class="bg en">Several years in software engineering — enterprise data-security platforms, big-data infrastructure, a security operations (SOC) system; currently building an enterprise metrics platform (turning business definitions into queries that run). In my own time I focus on AI systems that actually ship.</p>
+  <p class="bg zh">几年软件工程经验，做过企业数据安全平台、大数据底座和安全运营（SOC）系统，目前在做企业指标平台。</p>
+  <p class="bg en">Several years as a software engineer — enterprise data security platforms, big data infrastructure, and a security operations (SOC) system; currently building an enterprise metrics platform.</p>
 
   <h2><span class="zh">我想找什么</span><span class="en">What I'm looking for</span></h2>
   <ul class="want zh">
-    <li>请懂行的人看看我这些东西，给点实在建议——它们现在落在什么位置、还缺什么。</li>
-    <li>有合适的 AI 系统设计 / 智能体开发的机会，希望能认识、聊一聊。</li>
+    <li>想请懂行的人看看这些东西，指点一下：现在做到什么程度，还缺什么。</li>
+    <li>如果有合适的 AI 系统设计 / 智能体开发方向的工作机会，也希望能认识、聊一聊。</li>
   </ul>
   <ul class="want en">
-    <li>A knowledgeable eye on these — where they stand, what's missing.</li>
-    <li>The right opportunity in AI systems design / agent development — I'd like to connect.</li>
+    <li>I'd like experienced people to look at these and tell me where they stand and what's missing.</li>
+    <li>If there's a good opportunity in AI systems or agent development, I'd be glad to connect.</li>
   </ul>
 
   <p class="contact"><span class="zh">联系：</span><span class="en">Contact: </span><a href="mailto:shiyimeng.cs@hotmail.com">shiyimeng.cs@hotmail.com</a></p>
